@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://localhost/Slime_LV/',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'HWXIUexKGONAQpK3RUqk6WGi9G28wtLg',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -106,7 +106,15 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
+		
+		'Way\Generators\GeneratorsServiceProvider',
+		
+		'Repositories\Event\EventServiceProvider',
+		'Services\Event\EventServiceServiceProvider',
+		'Repositories\Sponsor\SponsorServiceProvider',
+		'Services\Sponsor\SponsorServiceServiceProvider',
+		'Repositories\Category\CategoryServiceProvider',
+		'Services\Category\CategoryServiceServiceProvider'
 	),
 
 	/*
@@ -147,7 +155,7 @@ return array(
 		'Crypt'           => 'Illuminate\Support\Facades\Crypt',
 		'DB'              => 'Illuminate\Support\Facades\DB',
 		'Eloquent'        => 'Illuminate\Database\Eloquent\Model',
-		'Event'           => 'Illuminate\Support\Facades\Event',
+		'Events'          => 'Illuminate\Support\Facades\Event',
 		'File'            => 'Illuminate\Support\Facades\File',
 		'Form'            => 'Illuminate\Support\Facades\Form',
 		'Hash'            => 'Illuminate\Support\Facades\Hash',
@@ -172,6 +180,10 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+
+
+
 
 	),
 

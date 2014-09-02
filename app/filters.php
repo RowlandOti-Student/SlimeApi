@@ -1,5 +1,6 @@
 <?php
 
+use Helpers\Response\MyResponse;
 /*
 |--------------------------------------------------------------------------
 | Application & Route Filters
@@ -78,3 +79,39 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+ /* Your choice for authentication mechanisms will greatly affect the logic in your filters. 
+  |  I’ve opted not to go into great detail with regards to how the tokens are generated and users are stored. 
+  |  Ultimately; you can check for token headers, username/password combos or even IP addresses.
+  |
+  | What’s important to note here is that we check for this thing (tokens in this case) and if they do not
+  |  match those stored in user records, we abort the application execution cycle with a 400 error (and message).
+  |
+  |  You can find out more about filters at: http://laravel.com/docs/routing#route-filters.
+ */
+  
+  /* Get the users api_token from the dtabase and compare it to the api_token
+  |  alias X-Api-Token recieved from the headers . Only matching users will
+  |  be authenticated with the api
+  */
+ Route::filter('api.auth', function()
+ {
+ 	//Get database user 
+ 	if (Auth::check()) 
+ 	{
+ 		$api_token = Auth::user()->api_token;	
+ 	}
+
+ 	if (Request::header('X-Api-Token') !== $api_token)
+ 	{
+ 		$status = 400;
+
+ 		$data = array(
+ 			'status'  => $status,
+			'success' => false,
+			'message' => 'Invalid Api_Token, Unauthorised'
+			);
+
+ 		return MyResponse::json($data, $status);
+ 	}
+ });
