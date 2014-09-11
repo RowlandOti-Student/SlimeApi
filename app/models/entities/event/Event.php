@@ -38,8 +38,8 @@ class Event extends BaseModel
      |  There are times when we need to customise how model attributes are stored and retrieved. 
      |  Laravel 4 lets us do that by providing specially named methods for accessors and mutators:
      |
-     | You can catch values, before they hit the database, by creating public set*Attribute() methods. 
-     | These should transform the $value in some way and commit the change to the internal $attributes array.
+     |  You can catch values, before they hit the database, by creating public set*Attribute() methods. 
+     |  These should transform the $value in some way and commit the change to the internal $attributes array.
      |
      |  You can also catch values, before they are returned, by creating get*Attribute() methods.
      |  In the case of these methods; I am removing all non-word characters from the name value, 
