@@ -23,7 +23,6 @@ class User extends BaseModel implements UserInterface, RemindableInterface
      */
     protected $hidden = array(
 
-<<<<<<< HEAD
         'password');
     
     protected $fillable = array(
@@ -124,4 +123,3 @@ class User extends BaseModel implements UserInterface, RemindableInterface
 	protected $hidden = array('password', 'remember_token');
 
 }
->>>>>>> laravel/master
