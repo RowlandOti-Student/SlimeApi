@@ -13,6 +13,7 @@
 
 Route::get('/', function()
 {
+<<<<<<< HEAD
         return View::make('hello');
 });
 
@@ -126,4 +127,7 @@ Route::delete("category/{category}", [
         "uses" => "CategoryController@destroy"
 ]);
 
+=======
+	return View::make('hello');
+>>>>>>> laravel/master
 });
