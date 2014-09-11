@@ -24,6 +24,6 @@ class Category extends BaseModel
     {
     	//we’ve gone with a belongsToMany() relationship to connect the entities together. 
         //The arguments for each of these is (1) the model name, (2) the pivot table name, (3) the local key and (4) the foreign key.
-        return $this->belongsToMany("Entities\Event\Event", "category_event", "category_id", "event_id");
+        return $this->belongsToMany("Entities\Event\Event", "category_event", "category_id", "event_id")->withTimestamps();
     }
 }

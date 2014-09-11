@@ -26,12 +26,12 @@ class Event extends BaseModel
     //The arguments for each of these is (1) the model name, (2) the pivot table name, (3) the local key and (4) the foreign key.
     public function categories()
     {
-        return $this->belongsToMany("Entities\Category\Category", "category_event", "event_id", "category_id");
+        return $this->belongsToMany("Entities\Category\Category", "category_event", "event_id", "category_id")->withTimestamps();
     }
 
     public function sponsors()
     {
-        return $this->belongsToMany("Entities\Sponsor\Sponsor", "event_sponsor", "event_id", "sponsor_id");
+        return $this->belongsToMany("Entities\Sponsor\Sponsor", "event_sponsor", "event_id", "sponsor_id")->withTimestamps();
     }
 
     /*

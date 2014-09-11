@@ -82,4 +82,24 @@ class User extends BaseModel implements UserInterface, RemindableInterface
         return "remember_token";
         
     }
+
+    /**
+     * User following relationship
+     *
+     * we’ve gone with a belongsToMany() relationship to connect the entities together. 
+     * The arguments for each of these is (1) the model name, (2) the pivot table name, 
+     *(3) the local key and (4) the foreign key.
+     */
+    public function following()
+    {
+        return $this->belongsToMany('User', 'user_follows', 'user_id', 'follow_id');
+    }
+
+    /**
+     * User followers relationship
+     */
+    public function followers()
+    {
+        return $this->belongsToMany('User', 'user_follows', 'follow_id', 'user_id');
+    }
 }
