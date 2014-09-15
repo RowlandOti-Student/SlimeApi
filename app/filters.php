@@ -89,7 +89,6 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
-<<<<<<< HEAD
 
  /* Your choice for authentication mechanisms will greatly affect the logic in your filters. 
   |  I’ve opted not to go into great detail with regards to how the tokens are generated and users are stored. 
@@ -126,5 +125,4 @@ Route::filter('csrf', function()
  		return MyResponse::json($data, $status);
  	}
  });
-=======
->>>>>>> laravel/master
+
