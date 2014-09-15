@@ -55,13 +55,8 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-<<<<<<< HEAD
 			'database'  => 'slime',
 			'username'  => 'root',
-=======
-			'database'  => 'forge',
-			'username'  => 'forge',
->>>>>>> laravel/master
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
